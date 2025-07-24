@@ -72,18 +72,18 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-muted-foreground">
                 <MapPin size={18} />
-                <span>123 Tech Street, Innovation City, 10001</span>
+                <span>Remote, New Delhi, India</span>
               </li>
               <li>
-                <a href="tel:+1234567890" className="flex items-center gap-2 text-muted-foreground hover:text-primary">
+                <a href="tel:+916387216393" className="flex items-center gap-2 text-muted-foreground hover:text-primary">
                   <Phone size={18} />
-                  <span>+1 (234) 567-890</span>
+                  <span>+91 6387216393</span>
                 </a>
               </li>
               <li>
-                <a href="mailto:info@techsync.com" className="flex items-center gap-2 text-muted-foreground hover:text-primary">
+                <a href="mailto:hp00695200@gmail.com" className="flex items-center gap-2 text-muted-foreground hover:text-primary">
                   <Mail size={18} />
-                  <span>info@techsync.com</span>
+                  <span>info@microtechbit.com</span>
                 </a>
               </li>
             </ul>

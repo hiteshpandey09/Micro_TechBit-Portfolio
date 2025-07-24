@@ -27,23 +27,24 @@ export default function Contact() {
     {
       icon: <Mail className="h-6 w-6 text-primary" />,
       title: "Email",
-      details: "info@techsync.com",
+      details: "info@microtechbit.com",
       action: "Send an email",
-      link: "mailto:info@techsync.com"
+      link: "mailto:hp00695200@gmail.com"
     },
     {
       icon: <Phone className="h-6 w-6 text-primary" />,
       title: "Phone",
-      details: "+1 (234) 567-890",
+      details: "+91 6387216393",
       action: "Make a call",
-      link: "tel:+1234567890"
+      link: "tel:+916387216393"
     },
     {
       icon: <MapPin className="h-6 w-6 text-primary" />,
       title: "Office",
-      details: "123 Tech Street, Innovation City, 10001",
+      details: "Remote, New Delhi, India",
       action: "Get directions",
-      link: "https://maps.google.com"
+      // link: "https://maps.google.com"
+      link: "https://www.google.com/maps/place/New+Delhi,+Delhi,+India"
     },
     {
       icon: <Clock className="h-6 w-6 text-primary" />,
@@ -143,11 +144,25 @@ export default function Contact() {
             </form>
           </div>
           
-          <div className="min-h-[400px] bg-muted rounded-lg overflow-hidden relative">
+          {/* <div className="min-h-[400px] bg-muted rounded-lg overflow-hidden relative">
             <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
               Map Location Embed
             </div>
-          </div>
+          </div> */}
+          <div className="min-h-[400px] bg-muted rounded-lg overflow-hidden relative">
+  <iframe
+    title="Google Map"
+    // src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.019236165735!2d-122.4194151846817!3d37.77492977975944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808c7e6e5e7b%3A0x7d0f7e7e7e7e7e7e!2s123%20Tech%20Street%2C%20Innovation%20City%2C%2010001!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224346.54004834854!2d77.04417366224577!3d28.527252739054852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi%2C%20India!5e0!3m2!1sen!2sus!4v1753379892400!5m2!1sen!2sus"
+    width="100%"
+    height="100%"
+    style={{ border: 0, minHeight: 400 }}
+    allowFullScreen={true}
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+    className="absolute inset-0 w-full h-full"
+  ></iframe>
+</div>
         </div>
       </section>
 
