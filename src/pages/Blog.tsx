@@ -6,6 +6,8 @@ import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 
 export default function Blog() {
+ // return "Hello ";
+
   // Sample blog posts
   const blogPosts = [
     {
@@ -109,6 +111,7 @@ export default function Blog() {
 
       {/* Blog Posts */}
       <section className="container py-8">
+        <Tabs defaultValue="all" className="w-full">
         <TabsContent value="all" className="mt-0">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post) => (
@@ -135,8 +138,10 @@ export default function Blog() {
             ))}
           </div>
         </TabsContent>
+        </Tabs>
         
         {categories.slice(1).map((category) => (
+          <Tabs>
           <TabsContent key={category.id} value={category.id} className="mt-0">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {blogPosts.filter(post => post.category === category.id).map((post) => (
@@ -163,6 +168,7 @@ export default function Blog() {
               ))}
             </div>
           </TabsContent>
+          </Tabs>
         ))}
       </section>
 
