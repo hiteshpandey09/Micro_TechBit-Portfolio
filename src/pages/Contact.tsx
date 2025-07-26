@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -8,19 +9,31 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Mail, Phone, MapPin, Clock, ArrowRight } from "lucide-react";
 
 export default function Contact() {
+  const form = useRef<HTMLFormElement>(null);
   const [formSubmitted, setFormSubmitted] = useState(false);
-  
-  const handleSubmit = (e: React.FormEvent) => {
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // In a real app, you would send the form data to a server here
-    setFormSubmitted(true);
     
-    // Reset form after 3 seconds for demonstration purposes
-    setTimeout(() => {
-      setFormSubmitted(false);
-      const form = e.target as HTMLFormElement;
-      form.reset();
-    }, 3000);
+    if (!form.current) return;
+
+    try {
+      await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      setFormSubmitted(true);
+      if (form.current) form.current.reset();
+      
+      // Optional: Show success message
+      alert('Message sent successfully!');
+    } catch (error) {
+      console.error('Error sending email:', error);
+      alert('Failed to send message. Please try again.');
+    }
   };
 
   const contactInfo = [
@@ -100,26 +113,26 @@ export default function Contact() {
               Fill out the form below, and our team will get back to you within 24 hours.
             </p>
             
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form ref={form} onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <Label htmlFor="name">Name</Label>
-                  <Input id="name" placeholder="Your name" required />
+                  <Input name="name" id="name" placeholder="Your name" required />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" placeholder="Your email" required />
+                  <Input name="email" id="email" type="email" placeholder="Your email" required />
                 </div>
               </div>
               
               <div className="space-y-2">
                 <Label htmlFor="phone">Phone Number</Label>
-                <Input id="phone" placeholder="Your phone number" />
+                <Input name="phone" id="phone" placeholder="Your phone number" />
               </div>
               
               <div className="space-y-2">
                 <Label htmlFor="subject">Subject</Label>
-                <Select>
+                <Select name="subject">
                   <SelectTrigger>
                     <SelectValue placeholder="Select a subject" />
                   </SelectTrigger>
@@ -135,7 +148,7 @@ export default function Contact() {
               
               <div className="space-y-2">
                 <Label htmlFor="message">Message</Label>
-                <Textarea id="message" placeholder="Your message" rows={5} required />
+                <Textarea name="message" id="message" placeholder="Your message" rows={5} required />
               </div>
               
               <Button type="submit" disabled={formSubmitted}>
