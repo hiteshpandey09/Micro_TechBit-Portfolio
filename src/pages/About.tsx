@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin, Twitter,BriefcaseBusiness } from "lucide-react";
+
 
 export default function About() {
   const founders = [
@@ -13,7 +14,8 @@ export default function About() {
       social: {
         linkedin: "#",
         twitter: "#",
-        github: "#"
+        github: "#",
+        portfolio: "#"
       }
     },
     {
@@ -24,7 +26,8 @@ export default function About() {
       social: {
         linkedin: "#",
         twitter: "#",
-        github: "#"
+        github: "#",
+        portfolio: "#"
       }
     },
     {
@@ -35,7 +38,8 @@ export default function About() {
       social: {
         linkedin: "#",
         twitter: "#",
-        github: "#"
+        github: "#",
+        portfolio: "#"
       }
     }
   ];
@@ -164,6 +168,9 @@ export default function About() {
                     </a>
                     <a href={founder.social.github} className="text-muted-foreground hover:text-primary">
                       <Github size={18} />
+                    </a>
+                    <a href={founder.social.portfolio} className="text-muted-foreground hover:text-primary">
+                      <BriefcaseBusiness size={18} />
                     </a>
                   </div>
                 </CardContent>
