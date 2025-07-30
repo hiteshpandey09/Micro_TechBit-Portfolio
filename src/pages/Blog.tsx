@@ -6,15 +6,13 @@ import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 
 export default function Blog() {
- // return "Hello ";
-
   // Sample blog posts
   const blogPosts = [
     {
       id: 1,
       title: "The Future of IoT in Smart Manufacturing",
       excerpt: "Explore how Internet of Things technologies are revolutionizing the manufacturing industry with real-time monitoring, predictive maintenance, and automated workflows.",
-      image: "https://images.unsplash.com/photo-1581092921461-6484b247d500?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      image: "https://plus.unsplash.com/premium_photo-1688678097473-2ce11d23e30c?q=80&w=970&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       author: "Dr. Sarah Chen",
       date: "July 15, 2025",
       category: "iot"
@@ -32,7 +30,7 @@ export default function Blog() {
       id: 3,
       title: "Advanced PLC Programming for Industrial Control",
       excerpt: "A deep dive into Programmable Logic Controller programming techniques that can enhance automation, reliability, and efficiency in industrial settings.",
-      image: "https://images.unsplash.com/photo-1581092160607-cce09fd61b7a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1474674556023-efef886fa147?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       author: "Michael Rodriguez",
       date: "June 28, 2025",
       category: "automation"
